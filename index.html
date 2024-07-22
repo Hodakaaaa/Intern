@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project Skills</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="header">
+      <div class="left">Mandhoj</div>
+      <div class="right">
+        <button onclick="window.open('https://www.google.com', '_blank')">
+          Google
+        </button>
+        <button onclick="window.location.href='contact.html'">Contact</button>
+      </div>
+    </div>
+
+    <div class="profile-picture">
+      <img src="#" />
+    </div>
+
+    <div class="nav">
+      <button onclick="scrollToSection('about')">About</button>
+      <button onclick="scrollToSection('project')">Project</button>
+      <button onclick="scrollToSection('skills')">Skills</button>
+    </div>
+
+    <section id="about">
+      <h2>About</h2>
+      <p>Welcome!To my about section</p>
+      <a href="https://github.com/your-github-username" target="_blank"
+        >Visit my GitHub</a
+      >
+    </section>
+
+    <div class="content-row">
+      <section id="project">
+        <h2>Project</h2>
+        <div class="project-list">
+          <div class="project-item">
+            <h3>E-commerce Platform</h3>
+            <p>Description of the e-commerce project goes here.</p>
+          </div>
+          <div class="project-item">
+            <h3>IoT System</h3>
+            <p>Description of the IoT project goes here.</p>
+          </div>
+          <div class="project-item">
+            <h3>Other Project</h3>
+            <p>Description of another project goes here.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="skills">
+        <h2>Skills</h2>
+        <div class="skills-list">
+          <div class="skill-item">
+            <h3>JavaScript</h3>
+          </div>
+          <div class="skill-item">
+            <h3>Python</h3>
+          </div>
+          <div class="skill-item">
+            <h3>React</h3>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <footer>Footer</footer>
+
+    <script>
+      function scrollToSection(sectionId) {
+        document
+          .getElementById(sectionId)
+          .scrollIntoView({ behavior: "smooth" });
+      }
+    </script>
+  </body>
+</html>

@@ -1,4 +1,4 @@
-\<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -8,141 +8,85 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
       rel="stylesheet"
     />
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
     <style>
       body {
         font-family: "Roboto", sans-serif;
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
+        background-color: #f5f5f5;
       }
-
-      .header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        background-color: #333;
-        color: white;
-        padding: 10px 20px;
-      }
-
-      .header .left {
-        font-size: 1.5em;
-      }
-
-      .header .right button {
-        margin-left: 10px;
-        padding: 10px;
-        background-color: #0056b3; /* Darker blue */
-        color: white;
-        border: none;
-        cursor: pointer;
-        border-radius: 5px;
-      }
-
-      .header .right button:hover {
-        background-color: #003d80; /* Even darker blue */
-      }
-
-      .profile-picture {
-        text-align: center;
-        margin: 20px 0;
-      }
-
       .profile-picture img {
+        width: 200px;
+        height: 200px;
+        object-fit: cover;
         border-radius: 50%;
-        width: 250px;
-        height: 250px;
-        border: 5px solid #007bff;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        /* border: 5px solid #007bff; */
       }
-
-      main {
-        padding: 20px;
-      }
-
-      #contact {
-        text-align: center;
-      }
-
-      .contact-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-      }
-
-      .contact-container form {
-        width: 100%;
-        max-width: 600px;
-        margin: 20px 0;
-      }
-
-      .form-group {
-        margin-bottom: 15px;
-        text-align: left;
-        width: 100%;
-      }
-
-      .form-group label {
-        display: block;
-        margin-bottom: 5px;
-      }
-
-      .form-group input,
-      .form-group textarea {
-        width: 100%;
-        padding: 10px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-      }
-
-      button[type="submit"] {
-        padding: 10px 20px;
-        background-color: #007bff; /* Blue color */
-        color: white;
-        border: none;
-        cursor: pointer;
-        border-radius: 5px;
-      }
-
-      button[type="submit"]:hover {
-        background-color: #0056b3; /* Darker blue */
-      }
-
       footer {
-        text-align: center;
-        padding: 20px;
         background-color: #333;
         color: white;
+        text-align: center;
+        padding: 20px 0;
+        margin-top: 40px;
       }
     </style>
   </head>
   <body>
-    <div class="header">
-      <div class="left">Mandhoj Thing</div>
-      <div class="right">
-        <button onclick="window.open('https://www.google.com', '_blank')">
-          Google
-        </button>
-        <button onclick="window.location.href='contact.html'">Contact</button>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="#">Mandhoj Thing</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              href="#"
+              onclick="window.open('https://www.google.com', '_blank')"
+              >Google</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container text-center my-4">
+      <div class="profile-picture">
+        <img src="sammar.jpg" class="img-fluid" alt="Profile Picture" />
       </div>
     </div>
 
-    <div class="profile-picture">
-      <img src="#" />
-    </div>
-
-    <main>
-      <section id="contact">
-        <h2>Contact</h2>
-        <div class="contact-container">
-          <form action="submit_form.php" method="POST">
+    <main class="container">
+      <section id="contact" class="my-5">
+        <h2 class="text-center">Contact</h2>
+        <div class="contact-container d-flex justify-content-center">
+          <form
+            action="submit_form.php"
+            method="POST"
+            class="w-100"
+            style="max-width: 600px"
+          >
             <div class="form-group">
               <label for="name">Name:</label>
               <input
                 type="text"
                 id="name"
                 name="name"
+                class="form-control"
                 placeholder="Enter your name"
                 required
               />
@@ -153,6 +97,7 @@
                 type="email"
                 id="email"
                 name="email"
+                class="form-control"
                 placeholder="Enter your email"
                 required
               />
@@ -163,24 +108,23 @@
                 id="message"
                 name="message"
                 rows="5"
+                class="form-control"
                 placeholder="Enter your message"
                 required
               ></textarea>
             </div>
-            <button type="submit">Send</button>
+            <button type="submit" class="btn btn-primary">Send</button>
           </form>
         </div>
       </section>
     </main>
 
-    <footer>Footer</footer>
+    <footer>
+      <p>Footer</p>
+    </footer>
 
-    <script>
-      function scrollToSection(sectionId) {
-        document
-          .getElementById(sectionId)
-          .scrollIntoView({ behavior: "smooth" });
-      }
-    </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   </body>
 </html>
